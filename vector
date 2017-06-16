@@ -1,0 +1,53 @@
+Vector
+
+1. Combing vectors
+	1). Vectors can be combined via the function c
+	2). Value coercion: 
+	In the code snippe above,it is necessary so as to maintain the same primitive data type for members in the same vector.  
+
+2. Vector Arithmetics	
+	1). Arithmetics operations are proformed member-by-member. i.e., memberwise
+	2). Arithmetics operations: we get new vectors vis memberwise operations
+		Multiply by *
+		Add two vector together
+		Subtraction
+		Multiplication
+		Division
+	3). Recycling rule:
+		If two vectors are of unequal length. the shorter one will be recycled in order to match the longer vector.
+		Warning message: Longer object length is not a multiple of shorter object length.
+
+3. Vector Index
+	1). We retrieve values in a vector by declearing an index inside a single square bracket "[]" opertation
+	2). How to retrieve a vector member
+		Since the vector index is 1-based, we can use the index position from 1.
+	3). Negative index
+		If the index is negative, it will strip the member whose position has the same absolute value as the negative index.
+	4). Out-of-range	Index (NA)
+		If an index is out-of-range, a missing value will be reported via the symbol NA.
+
+4. Numeric Index Vector 
+	1). A new vector can be sliced from a given vector with a numeric index vector, which consists of members of a given vector
+	2). Duplicate indexes
+		The index vector allows duplicate values.
+	3). Out-of-order indexes
+		The index vector can even be out-of-order
+	4). Range index
+		To produce a vector slice between two indexes, we can use the colon operation ":"
+		More information: help(":")
+
+5. Logical Index Vector
+	1). A few vector can be slice from a given vector with a logical index vector, which has the same length as the original vector.
+		s=c("aa", "bb", "cc", "dd", "ee")
+		L=c(FALSE, TRUE, FALSE, TRUE, FALSE)
+		s[L]
+
+6. Named Vector Member
+	1). we can assign names to vector memberas
+		v=c("Marry", "Sue")
+		name(v)=c("First", "Last")
+	2). then we can retrive the first member by its name
+		v["First"]
+	3). Furthermore, we can reverse the order with a character string index vector.
+		v[c("Last", "First")]
+

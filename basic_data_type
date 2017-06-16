@@ -1,0 +1,59 @@
+Basic data type
+
+1. numeric
+	1). Decimal values are called numerics.
+	2). It is the default computational data type.
+	3). Even if we assign an integer to a variable, it is still being saved as a numeric value.
+	4). We can use the class function to check the variable type.
+		class(x)
+	5). It can be confirmed with the is.integer function
+		is.integer(x)
+
+2. Integer
+	1). In order to create an integer variable in R, we invoke the as.intefer function.
+		y=as.integer(3)
+		class(y)
+		is.integer(y)
+	2). we can coerce a numeric value into an integer value with the same as.integer function
+		y=as.integer(3.14)
+		class(y)
+	3). And we can parse a string for decimal values in much the same way.
+		y=as.integer("3.15")
+		class(y)
+	4). Often it is useful to perform airthmetic  on logical values 
+		TRUE has the value 1, while FALSE has the value 0
+	5). On the other hand, it is erroreous tring to parse a non-decimal string.
+
+3. Complex
+	1). A complex value in R is defined via the pure imaginary value i
+		z=1+2i
+		class(z)
+	2). The following gives an error as -1 is not a complex value.
+		sqrt(-1)
+		Instead, we have to use the complex value -1+0i
+		sqrt(-1+0i)
+	3). An alternative is to coerce -1 into a complex value
+		sqrt(as.complex(-1))
+
+4. Logical
+	1). standard logical operations is: &(and), |(or), !(negation)
+		help("&")
+	2). A logical value is often created via comparison between variables
+		z=10>15
+		class(z)
+
+5. Character
+	1). A character object is used to represent string values in R. We convert objects into character values with the as.charactor function.
+		x=as.character(3.14)
+	2). Two character values can be concatenated with the paste function
+		fname="Hello"; lname="world"
+		paste(fname, lname)
+	3). However, it is often more convenient to create readble string with the sprintf function, which has a C language syntax
+		sprintf("%s has %d dollars", "Joe", 100)
+	4). To extract a substring, we apply substring function.
+		substr("Marry has a little lamb", start=7, stop=24)
+	5). And to replace the first occurance of the word "little" by another word "big" in the string, we apply sub function.
+		sub("little","big","Marry has a little lamb")
+	6). Many other function
+		help("sub")
+

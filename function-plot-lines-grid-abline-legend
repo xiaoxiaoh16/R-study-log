@@ -1,0 +1,58 @@
+1. plot function
+　plot(x,y,xlim=c(0,100),ylim=c(0.4,1),
+       type="o",lwd=2,col=2,pch=24,cex=1.5, yaxs="i",xaxs="i",
+       xlab="Sample Ration(%)",ylab="Accuracy")
+
+# x,y : 要画图的x轴内容和y轴内容
+# xlim,ylim: x轴和y轴的范围
+# type: 表示图的形状，是点、线、点线、阶梯线等等。
+# lwd: 线的宽度
+# col: 颜色
+# pch: 点的形状
+# cex: 点的大小
+# yaxs,xaxa: plot默认画图时会在预留一部分坐标空间，设置为“i”后，就可以去掉预留空间
+# xlab,ylab:x轴和y轴的名称
+
+
+2. lines function
+# 当想要在一个图中画多条线时，可以用此函数
+lines(LPP$LPP~LPP$x,col = "blue",type = "o",lwd = 2,pch=5)
+
+
+3. grid function
+# grid 对图添加栅格
+grid(nx=NA,ny=6,lwd=2)
+
+# nx,ny：分别表示x和y方向的虚线，当值为NA时，不对相应的方向分割，ny=6 表示将y轴等距分割为6段
+
+
+4. abline function
+# 添加一条直线
+abline(h=0.85,col="black",lty=1,lwd=2)
+# h: y轴方向的高度 
+# v: x轴的位置
+
+
+5. legend function
+# 添加图例
+legend("bottomright",legend=c("AC正确率","MI归一化互信息"),col=c("blue","red"),pch=c(5,24),lty=1)
+# “bottomright” ：图例的位置
+# legend: 内容
+# lty: 线的类型
+
+# las参数
+#   坐标刻度标签的方向。0表示总是平行于坐标轴，1表示总是水平，2表示总是垂直于坐标轴。
+#   las=1。可以在plot,axis等函数中使用。
+# yaxt，xaxt参数
+#   是否显示相应坐标轴的标度。yaxt="n"表示不显示y轴的刻度。
+# axis函数
+#   axis(side=2,at=c(1,2,3,4,5,6),labels=c(1,2,3,4,5,6),las=1)
+#	side:是对x轴还是y轴设置刻度。side=1 表示对x轴，2表示对y轴
+#   at：表示在坐标轴的什么位置
+#   bels：表示在对应的位置标什么，可以是值也可以是说明
+
+
+links: http://www.cnblogs.com/bore3601/archive/2012/12/05/2803676.html
+
+
+
